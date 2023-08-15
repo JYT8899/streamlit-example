@@ -22,10 +22,9 @@ st.title("""
 ## Bilde
 
 st.markdown("![Alt Text]("
-            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nettavisen.no%2Fmeninger%2\
-            Ffriskemeninger%2Fslik-kan-alle-fa-boliglan-i-dag%2Fs%2F12-95-3423479788&psig=AOvV\
-            aw1YajLfEFzlDQpOfNA80-yq&ust=1692194509049000&source=images&cd=vfe&opi=89978449&ve\
-            d=0CBAQjRxqFwoTCNDTzvbp3oADFQAAAAAdAAAAABAE)")
+"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nettavisen.no%2Fmeninger%2Ffriskemeninger%2Fslik-kan\
+-alle-fa-boliglan-i-dag%2Fs%2F12-95-3423479788&psig=AOvVaw1YajLfEFzlDQpOfNA80-yq&ust=1692194509049000&source\
+=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNDTzvbp3oADFQAAAAAdAAAAABAE)")
 
 alder = st.number_input("**Alder**", min_value=0, max_value=100, value=30, step=1, key=1)
 

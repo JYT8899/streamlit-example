@@ -16,10 +16,10 @@ test_raw = pd.read_csv("test.csv")
 train = train_raw.drop(['Loan_ID'], axis=1)
 test = test_raw.drop(['Loan_ID'], axis=1)
 
-simp = SimpleImputer(missing_values=np.nan, strategy='most_frequent')
-
 
 def add_values(var):
+    simp = SimpleImputer(missing_values=np.nan, strategy='most_frequent')
+
     for col in var.columns:
         simp_1 = simp.fit(var[[f'{col}']])
         var[f'{col}'] = simp_1.transform(var[[f'{col}']])
@@ -29,23 +29,21 @@ def add_values(var):
 train = add_values(train)
 test = add_values(test)
 
-le = LabelEncoder()
-for col in train[
-    ['Gender', 'Married', 'Education', 'Self_Employed', 'Dependents', 'Property_Area', 'Credit_History',
-     'Loan_Status']]:
-    # print(col)
-    train[col] = le.fit_transform(train[col])
 
-train['CoapplicantIncome'] = train['CoapplicantIncome'].astype('int')
-# train.head()
+def label(var):
+    le = LabelEncoder()
+    for col in var[
+        ['Gender', 'Married', 'Education', 'Self_Employed', 'Dependents', 'Property_Area', 'Credit_History',
+         'Loan_Status']]:
+        # print(col)
+        var[col] = le.fit_transform(var[col])
 
-le = LabelEncoder()
-for col in test[
-    ['Gender', 'Married', 'Education', 'Self_Employed', 'Dependents', 'Credit_History', 'Property_Area']]:
-    # print(col)
-    test[col] = le.fit_transform(test[col])
+    var['CoapplicantIncome'] = var['CoapplicantIncome'].astype('int')
+    return var
 
-test['CoapplicantIncome'] = test['CoapplicantIncome'].astype('int')
+train = label(train)
+test = label(test)
+
 
 x = train.drop('Loan_Status', axis=1)
 y = train['Loan_Status']
