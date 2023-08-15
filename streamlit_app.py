@@ -9,7 +9,7 @@ Created on Tue Jan 10 10:51:21 2023
 ### Importering av moduler
 
 import streamlit as st
-#import tin100 as tin
+import tin100 as tin
 import pandas as pd
 import numpy as np
 
@@ -22,8 +22,10 @@ st.title("""
 ## Bilde
 
 st.markdown("![Alt Text]("
-            "https://blogg.paretobank.no/hs-fs/hubfs/Driftsfinansiering%20Slik%20skriver%20du%\
-20en%20lånesøknad.png?width=1000&name=Driftsfinansiering%20Slik%20skriver%20du%20en%20lånesøknad.png)")
+            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nettavisen.no%2Fmeninger%2\
+            Ffriskemeninger%2Fslik-kan-alle-fa-boliglan-i-dag%2Fs%2F12-95-3423479788&psig=AOvV\
+            aw1YajLfEFzlDQpOfNA80-yq&ust=1692194509049000&source=images&cd=vfe&opi=89978449&ve\
+            d=0CBAQjRxqFwoTCNDTzvbp3oADFQAAAAAdAAAAABAE)")
 
 alder = st.number_input("**Alder**", min_value=0, max_value=100, value=30, step=1, key=1)
 
