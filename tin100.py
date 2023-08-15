@@ -1,7 +1,7 @@
 ### Importering av moduler
 
 import pandas as pd
-from sklearn.impute import SimpleImputer
+from sklearn.imputer import SimpleImputer
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
 
